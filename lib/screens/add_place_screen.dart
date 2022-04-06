@@ -5,6 +5,7 @@ import 'package:provider/provider.dart';
 
 import '../widgets/image_input.dart';
 import '../providers/user_places.dart';
+import '../widgets/location_input.dart';
 
 class AddPlaceScreen extends StatefulWidget {
   static const routeName = 'add-place';
@@ -26,7 +27,6 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
     if (_textController.text.isEmpty || _pickedImage == null) {
       return;
     }
-    print('save place called');
     Provider.of<UserPlaces>(context, listen: false)
         .addPlace(_textController.text, _pickedImage!);
     Navigator.of(context).pop();
@@ -53,6 +53,8 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
                 height: 10,
               ),
               ImageInputWidget(_selectImage),
+              const SizedBox(height: 10),
+              const LocationInputWidget(),
             ],
           ),
         ))),

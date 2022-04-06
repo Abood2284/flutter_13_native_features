@@ -23,9 +23,13 @@ class _ImageInputWidgetState extends State<ImageInputWidget> {
       source: ImageSource.camera,
       maxWidth: 600,
     );
+    // Because can tap the take picture and dont click any picture in that case _imagePicker will return null and we will be trying to save null image on drive.
+    if (_imagePicked == null) {
+      return;
+    }
     setState(() {
       /// Becuase [_imagePicked] is of type XFile
-      _storedImage = File(_imagePicked!.path);
+      _storedImage = File(_imagePicked.path);
     });
 
     /// * Storing the image on the device Hard Drive.

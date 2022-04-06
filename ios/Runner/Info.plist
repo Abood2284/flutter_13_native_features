@@ -28,6 +28,10 @@
 	<string>To add your places picture</string>
 	<key>NSCameraUsageDescription</key>
 	<string>To add your places picture</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>To acces location</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+    <string>We need to always use your location!</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
